@@ -567,13 +567,7 @@ body {
   padding: 2rem;
   display: flex;
   flex-direction: column;
-  transition: var(--transition);
-}
-
-.interest-card:hover {
-  transform: translateY(-3px);
-  border-color: var(--accent);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
+  cursor: default;
 }
 
 .interest-header {
@@ -600,7 +594,11 @@ body {
   color: var(--text-secondary);
   font-size: 0.95rem;
   line-height: 1.55;
-  min-height: 4.75rem;
+  min-height: 6.0rem;
+}
+
+.interest-list li:last-child {
+  min-height: auto;
 }
 
 .interest-list li::before {
