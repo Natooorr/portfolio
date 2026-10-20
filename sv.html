@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="sv">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zachris Stenhammar - Mjukvaruutvecklare Portfolio</title>
+  <meta name="description" content="Portfolio för Zachris Stenhammar - Mjukvaruutvecklare och Chalmers-alumn. Utvecklar SlayCRM hos KenDev AB." />
+
+  <!-- Open Graph Meta Tags (Optimerade för LinkedIn) -->
+  <meta property="og:title" content="Zachris Stenhammar - Mjukvaruutvecklare" />
+  <meta property="og:description" content="Mjukvaruutvecklare och Chalmers-alumn. Utvecklar SlayCRM hos KenDev AB med TypeScript, React och AI-integrationer." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="sv_SE" />
+  <meta property="og:url" content="https://natooorr.github.io/portfolio/sv.html" />
+  <meta property="og:image" content="https://placehold.co/1200x630/0f172a/38bdf8?text=Zachris+Stenhammar+%E2%80%94+Portfolio" />
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="#hero" class="logo">Zachris Stenhammar</a>
+      <nav class="nav-links">
+        <a href="#about">Om mig</a>
+        <a href="#experience">Erfarenhet</a>
+        <a href="#projects">Projekt</a>
+        <a href="#interests">Intressen</a>
+        <a href="#contact">Kontakt</a>
+      </nav>
+      <div class="nav-actions">
+        <div class="lang-switch" role="group" aria-label="Språkval / Language selection">
+          <a href="index.html" class="lang-btn" title="English">EN</a>
+          <span class="lang-sep">/</span>
+          <a href="sv.html" class="lang-btn active" title="Svenska">SV</a>
+        </div>
+        <button id="theme-toggle" class="btn-icon" aria-label="Växla mörkt/ljust läge">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero-section">
+    <div class="container hero-content">
+      <div class="status-badge">
+        <span class="status-dot"></span> Tillgänglig för nya uppdrag (från januari 2027)
+      </div>
+      <h1 class="hero-title">
+        Hej, jag är <span class="highlight">Zachris Stenhammar</span>.<br />
+        <span class="gradient-text">Mjukvaruutvecklare</span> &amp; Chalmers-alumn.
+      </h1>
+      <p class="hero-subtitle">
+        Bygger och skalar <a href="https://slaycrm.eu" target="_blank" rel="noopener" class="text-link"><strong>SlayCRM</strong></a> hos <a href="https://kendev.se" target="_blank" rel="noopener" class="text-link"><strong>KenDev AB</strong></a>, med fokus på fullstack TypeScript, reaktiva frontendgränssnitt och moderna AI-agentflöden.
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">Visa projekt</a>
+        <a href="https://www.linkedin.com/in/zachris-stenhammar-56bb15175/" target="_blank" rel="noopener" class="btn btn-secondary">
+          <svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64c-.95 0-1.72.77-1.72 1.72s.77 1.72 1.72 1.72 1.72-.77 1.72-1.72-.77-1.72-1.72Z"/>
+          </svg>
+          Kontakt på LinkedIn
+        </a>
+        <a href="https://github.com/Natooorr" target="_blank" rel="noopener" class="btn btn-ghost">
+          <svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+            <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/>
+          </svg>
+          GitHub (@Natooorr)
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Om mig</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="lead-text">
+            Fokuserad på att bygga snabba, skalbara webbapplikationer och integrera praktiska AI-verktyg i verkliga produktionsflöden.
+          </p>
+          <div class="about-highlights">
+            <div class="highlight-item">
+              <span class="highlight-bullet">▹</span>
+              <div>
+                <strong>Fullstack webbutveckling:</strong> Utvecklar moderna, komponentbaserade gränssnitt i TypeScript, React och Vite med Supabase och Node.js i backend.
+              </div>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-bullet">▹</span>
+              <div>
+                <strong>AI- och agentverktyg:</strong> Integrerar konversationsmodeller och Model Context Protocol (MCP)-adaptrar direkt i verksamhetskritiska system.
+              </div>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-bullet">▹</span>
+              <div>
+                <strong>Ingenjörsmässig kvalitet:</strong> Prioriterar underhållbar kod med automatiserade enhets- och end-to-end-tester via Vitest och Playwright.
+              </div>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-bullet">▹</span>
+              <div>
+                <strong>Mobil &amp; system:</strong> Utvecklar nativa iOS-upplevelser i SwiftUI med lokal datalagring och hög prestanda.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="skills-card">
+          <h3 class="skills-heading">Tekniker &amp; verktyg</h3>
+          <div class="skills-tags">
+            <span class="tag">TypeScript / JavaScript</span>
+            <span class="tag">React &amp; Vite</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">Supabase &amp; SQL</span>
+            <span class="tag">Swift &amp; SwiftUI</span>
+            <span class="tag">Vitest &amp; Playwright</span>
+            <span class="tag">Storybook</span>
+            <span class="tag">AI / MCP-verktyg</span>
+            <span class="tag">Git &amp; GitHub</span>
+            <span class="tag">REST API:er</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Erfarenhet &amp; utbildning</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="timeline">
+        <!-- KenDev AB -->
+        <div class="timeline-item">
+          <div class="timeline-meta">
+            <span class="timeline-period">Sep 2026 - Dec 2026</span>
+            <span class="timeline-company"><a href="https://kendev.se" target="_blank" rel="noopener" class="text-link">KenDev AB</a></span>
+          </div>
+          <div class="timeline-content">
+            <h3 class="timeline-role">Mjukvaruutvecklare - <a href="https://slaycrm.eu" target="_blank" rel="noopener" class="text-link">SlayCRM</a></h3>
+            <ul class="timeline-bullets">
+              <li>Utvecklade fullstack-funktionalitet och reaktiva UI-komponenter i TypeScript, React och Vite.</li>
+              <li>Kopplade samman backend-tjänster och databaslogik med Supabase.</li>
+              <li>Upprätthöll testkvalitet och CI-flöden via Vitest och Playwright.</li>
+              <li>Integrerade Model Context Protocol (MCP)-adaptrar för AI-drivna chatbotfunktioner.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Chalmers -->
+        <div class="timeline-item">
+          <div class="timeline-meta">
+            <span class="timeline-period">Klass 2026</span>
+            <span class="timeline-company">Chalmers tekniska högskola</span>
+          </div>
+          <div class="timeline-content">
+            <h3 class="timeline-role">Teknisk högskoleexamen / Datateknik &amp; Datavetenskap</h3>
+            <ul class="timeline-bullets">
+              <li>Bred och gedigen grund inom datateknik, programvaruarkitektur och algoritmer.</li>
+              <li>Samarbetsinriktade utvecklingsprojekt med fokus på ren kod och distribuerade system.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Utvalda projekt</h2>
+        <p class="section-subtitle">Verkliga applikationer och projekt jag har utvecklat och bidragit till.</p>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1: SlayCRM -->
+        <article class="project-card">
+          <div class="project-preview">
+            <img src="images/slaycrm.png" alt="SlayCRM Förhandsgranskning" />
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="badge">TypeScript</span>
+              <span class="badge">React &amp; Vite</span>
+              <span class="badge">Supabase</span>
+              <span class="badge">AI / MCP</span>
+            </div>
+            <h3 class="project-title">SlayCRM (KenDev AB)</h3>
+            <p class="project-description">
+              Ett högpresterande modernt CRM-system optimerat för smidiga arbetsflöden inom fältsälj. Inkluderar avancerad rutthantering, automatiserad testning och AI-assistenter med MCP-verktygsintegration.
+            </p>
+            <div class="project-links">
+              <a href="https://slaycrm.eu" target="_blank" rel="noopener" class="link-btn link-demo">Besök<br />SlayCRM&nbsp;&rarr;</a>
+              <span class="project-meta">Kommersiellt projekt<br />(KenDev AB)</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2: Airene Vibe Coding -->
+        <article class="project-card">
+          <div class="project-preview">
+            <img src="images/vibecoding.png" alt="Airene Vibe Coding Förhandsgranskning" />
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="badge">Astro</span>
+              <span class="badge">TypeScript</span>
+              <span class="badge">AI-workshops</span>
+              <span class="badge">Community</span>
+            </div>
+            <h3 class="project-title">Airene Vibe Coding - Vibe Coding för barn</h3>
+            <p class="project-description">
+              Ett workshopinitiativ och plattform för barn (5–12 år) att bygga spel, animationer och berättelser med mobil, surfplatta eller dator med AI-stöd - gratis, integritetsvänligt och utan kontokrav.
+            </p>
+            <div class="project-links">
+              <a href="https://vibecoding.bernting.se" target="_blank" rel="noopener" class="link-btn link-demo">Besök<br />plattformen&nbsp;&rarr;</a>
+              <span class="project-meta">Utbildningsinitiativ<br />(KenDev AB &amp; Airene AB)</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3: My Kitchen iOS App -->
+        <article class="project-card">
+          <div class="project-preview">
+            <div class="project-placeholder-thumb gradient-2">
+              <span>My Kitchen (iOS)</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="badge">SwiftUI</span>
+              <span class="badge">iOS 17+</span>
+              <span class="badge">Eget verktyg</span>
+              <span class="badge">Lokal lagring</span>
+            </div>
+            <h3 class="project-title">My Kitchen - Nativ iOS-app</h3>
+            <p class="project-description">
+              En nativ iPhone-app för matlager och minskat matsvinn, byggd i SwiftUI för eget dagligt bruk. Innehåller proaktiva bäst-före-varningar, anpassningsbara tidsfönster, snabb sökning och lokal atomär JSON-lagring utan molnberoenden.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com/Natooorr/KitchenInventory" target="_blank" rel="noopener" class="link-btn link-demo">Visa på<br />GitHub&nbsp;&rarr;</a>
+              <span class="project-meta">Byggd för eget<br />dagligt bruk</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Bortom koden Section -->
+  <section id="interests" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Bortom koden</h2>
+        <p class="section-subtitle">Vad jag ägnar mig åt när jag inte sitter framför terminalen.</p>
+      </div>
+
+      <div class="interests-grid">
+        <!-- Bakning -->
+        <div class="interest-card">
+          <div class="interest-header">
+            <h3 class="interest-title">Bakning</h3>
+          </div>
+          <ul class="interest-list">
+            <li>
+              <strong>Enkelt &amp; gott:</strong> <em>Kolakakor</em> (sega kolasnittar)&nbsp;- snabba, enkla och oslagbara till kaffet.
+            </li>
+            <li>
+              <strong>Favorit:</strong> <em>Crème brûlée</em>&nbsp;- kräver lite mer teknik och brännare, men är en absolut favorit.
+            </li>
+            <li>
+              <strong>Bjudfavorit:</strong> <em>Cheesecake</em>&nbsp;- krämig, fyllig och alltid den första efterrätten som tar slut.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Brädspel -->
+        <div class="interest-card">
+          <div class="interest-header">
+            <h3 class="interest-title">Brädspel</h3>
+          </div>
+          <ul class="interest-list">
+            <li>
+              <strong>Storfavoriten:</strong> <em>Terraforming Mars</em>&nbsp;- min absoluta favorit när det gäller djup strategi och motorbygge.
+            </li>
+            <li>
+              <strong>Enkla att lära:</strong> <em>Codenames</em> &amp; <em>Coup</em>&nbsp;- snabba att lära ut, mycket interaktion och alltid uppskattade.
+            </li>
+            <li>
+              <strong>Hedersomnämnande:</strong> <em>Dominion</em>&nbsp;- renodlat kortbygge som jag gärna tar fram oftare.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Datorspel -->
+        <div class="interest-card">
+          <div class="interest-header">
+            <h3 class="interest-title">Datorspel</h3>
+          </div>
+          <ul class="interest-list">
+            <li>
+              <strong>Solo:</strong> <em>Slay the Spire</em>&nbsp;- den oslagbara måttstocken för roguelike-kortbyggare och ruttplanering.
+            </li>
+            <li>
+              <strong>Med vänner:</strong> <em>Terraria</em> och <em>League of Legends</em>&nbsp;- grymt för äventyr, bossar och kvällsmatcher.
+            </li>
+            <li>
+              <strong>Udda favorit:</strong> <em>Mewgenics</em>&nbsp;- ett taktiskt och kaotiskt turbaserat kattuppfödnings-roguelike med helt vrickad spelmekanik.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & LinkedIn CTA -->
+  <section id="contact" class="section">
+    <div class="container contact-container">
+      <h2 class="section-title">Hör av dig</h2>
+      <p class="contact-subtitle">
+        Jag avslutar mitt uppdrag hos KenDev AB i december och ser fram emot nästa utmaning inom mjukvaruutveckling. Hör gärna av dig eller anslut på LinkedIn!
+      </p>
+      <div class="contact-buttons">
+        <a href="https://www.linkedin.com/in/zachris-stenhammar-56bb15175/" target="_blank" rel="noopener" class="btn btn-primary btn-large">
+          <svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64c-.95 0-1.72.77-1.72 1.72s.77 1.72 1.72 1.72 1.72-.77 1.72-1.72-.77-1.72-1.72Z"/>
+          </svg>
+          Kontakt på LinkedIn
+        </a>
+        <a href="https://github.com/Natooorr" target="_blank" rel="noopener" class="btn btn-secondary btn-large">
+          <svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/>
+          </svg>
+          Utforska GitHub (@Natooorr)
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <p>&copy; 2026 Zachris Stenhammar. Byggd för GitHub Pages.</p>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/zachris-stenhammar-56bb15175/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/Natooorr" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>

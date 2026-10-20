@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Zachris Stenhammar - Full Stack Developer Portfolio</title>
+  <meta name="description" content="Portfolio of Zachris Stenhammar - Software Developer & Chalmers Graduate. Currently engineering SlayCRM at Kendev AB." />
+
+  <!-- Open Graph Meta Tags (Optimized for LinkedIn link previews) -->
+  <meta property="og:title" content="Zachris Stenhammar - Software Developer" />
+  <meta property="og:description" content="Software Developer & Chalmers graduate. Currently developing SlayCRM at Kendev AB with TypeScript, React, and AI integrations." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://natooorr.github.io/portfolio/" />
+  <meta property="og:image" content="https://placehold.co/1200x630/0f172a/38bdf8?text=Zachris+Stenhammar+%E2%80%94+Portfolio" />
+
+  <link rel="stylesheet" href="style.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <!-- Header / Navigation -->
+  <header class="header">
+    <div class="container nav-container">
+      <a href="#hero" class="logo">Zachris Stenhammar</a>
+      <nav class="nav-links">
+        <a href="#about">About</a>
+        <a href="#experience">Experience</a>
+        <a href="#projects">Projects</a>
+        <a href="#interests">Interests</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <div class="nav-actions">
+        <div class="lang-switch" role="group" aria-label="Language selection">
+          <a href="index.html" class="lang-btn active" title="English">EN</a>
+          <span class="lang-sep">/</span>
+          <a href="sv.html" class="lang-btn" title="Svenska">SV</a>
+        </div>
+        <button id="theme-toggle" class="btn-icon" aria-label="Toggle dark/light mode">🌙</button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section id="hero" class="hero-section">
+    <div class="container hero-content">
+      <div class="status-badge">
+        <span class="status-dot"></span> Open to opportunities (Available from Jan 2027)
+      </div>
+      <h1 class="hero-title">
+        Hi, I'm <span class="highlight">Zachris Stenhammar</span>.<br />
+        <span class="gradient-text">Software Developer</span> &amp; Chalmers Graduate.
+      </h1>
+      <p class="hero-subtitle">
+        Building and scaling <a href="https://slaycrm.eu" target="_blank" rel="noopener" class="text-link"><strong>SlayCRM</strong></a> at <a href="https://kendev.se" target="_blank" rel="noopener" class="text-link"><strong>Kendev AB</strong></a>, specializing in full-stack TypeScript, reactive frontends, and modern AI agent workflows.
+      </p>
+      <div class="hero-cta">
+        <a href="#projects" class="btn btn-primary">View Projects</a>
+        <a href="https://www.linkedin.com/in/zachris-stenhammar-56bb15175/" target="_blank" rel="noopener" class="btn btn-secondary">
+          <svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64c-.95 0-1.72.77-1.72 1.72s.77 1.72 1.72 1.72 1.72-.77 1.72-1.72-.77-1.72-1.72Z"/>
+          </svg>
+          Connect on LinkedIn
+        </a>
+        <a href="https://github.com/Natooorr" target="_blank" rel="noopener" class="btn btn-ghost">
+          <svg class="icon" viewBox="0 0 24 24" width="18" height="18" fill="currentColor">
+            <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/>
+          </svg>
+          GitHub (@Natooorr)
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- About Section -->
+  <section id="about" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">About Me</h2>
+        <div class="section-line"></div>
+      </div>
+      <div class="about-grid">
+        <div class="about-text">
+          <p class="lead-text">
+            Focused on engineering clean, scalable web applications and bringing practical AI tooling into production workflows.
+          </p>
+          <div class="about-highlights">
+            <div class="highlight-item">
+              <span class="highlight-bullet">▹</span>
+              <div>
+                <strong>Full-Stack Web Development:</strong> Engineering responsive, component-driven interfaces in TypeScript, React, and Vite, backed by Supabase and Node.js.
+              </div>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-bullet">▹</span>
+              <div>
+                <strong>AI &amp; Agent Tooling:</strong> Integrating conversational AI models and Model Context Protocol (MCP) adapters directly into production workflows.
+              </div>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-bullet">▹</span>
+              <div>
+                <strong>Engineering Rigor:</strong> Prioritizing maintainable code covered by automated unit and end-to-end testing with Vitest and Playwright.
+              </div>
+            </div>
+            <div class="highlight-item">
+              <span class="highlight-bullet">▹</span>
+              <div>
+                <strong>Mobile &amp; Systems:</strong> Crafting native iOS experiences with SwiftUI and local-first data persistence.
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="skills-card">
+          <h3 class="skills-heading">Core Skills &amp; Technologies</h3>
+          <div class="skills-tags">
+            <span class="tag">TypeScript / JavaScript</span>
+            <span class="tag">React &amp; Vite</span>
+            <span class="tag">Node.js</span>
+            <span class="tag">Supabase &amp; SQL</span>
+            <span class="tag">Swift &amp; SwiftUI</span>
+            <span class="tag">Vitest &amp; Playwright</span>
+            <span class="tag">Storybook</span>
+            <span class="tag">AI / MCP Tooling</span>
+            <span class="tag">Git &amp; GitHub</span>
+            <span class="tag">REST APIs</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Experience Section -->
+  <section id="experience" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Experience &amp; Education</h2>
+        <div class="section-line"></div>
+      </div>
+
+      <div class="timeline">
+        <!-- Kendev AB -->
+        <div class="timeline-item">
+          <div class="timeline-meta">
+            <span class="timeline-period">Sep 2026 - Dec 2026</span>
+            <span class="timeline-company"><a href="https://kendev.se" target="_blank" rel="noopener" class="text-link">Kendev AB</a></span>
+          </div>
+          <div class="timeline-content">
+            <h3 class="timeline-role">Software Developer - <a href="https://slaycrm.eu" target="_blank" rel="noopener" class="text-link">SlayCRM</a></h3>
+            <ul class="timeline-bullets">
+              <li>Shipped full-stack features and reactive UI components using TypeScript, React, and Vite.</li>
+              <li>Connected backend data services and database operations with Supabase.</li>
+              <li>Maintained test reliability through automated pipelines using Vitest and Playwright.</li>
+              <li>Integrated Model Context Protocol (MCP) adapters to power AI chatbot capabilities.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Chalmers -->
+        <div class="timeline-item">
+          <div class="timeline-meta">
+            <span class="timeline-period">Class of 2026</span>
+            <span class="timeline-company">Chalmers University of Technology</span>
+          </div>
+          <div class="timeline-content">
+            <h3 class="timeline-role">Higher Education Degree in Technology / Computer Science</h3>
+            <ul class="timeline-bullets">
+              <li>Comprehensive training in computer science, software architecture, and algorithm design.</li>
+              <li>Collaborative engineering projects focusing on clean code principles and distributed systems.</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="section">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Featured Projects</h2>
+        <p class="section-subtitle">Real-world applications and projects I've built and contributed to.</p>
+      </div>
+
+      <div class="projects-grid">
+        <!-- Project 1: SlayCRM -->
+        <article class="project-card">
+          <div class="project-preview">
+            <img src="images/slaycrm.png" alt="SlayCRM Preview" />
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="badge">TypeScript</span>
+              <span class="badge">React &amp; Vite</span>
+              <span class="badge">Supabase</span>
+              <span class="badge">AI / MCP</span>
+            </div>
+            <h3 class="project-title">SlayCRM (Kendev AB)</h3>
+            <p class="project-description">
+              A high-performance modern CRM system built for seamless customer data workflows. Features comprehensive route tree management, automated end-to-end testing, and conversational AI assistants with custom MCP tool integration.
+            </p>
+            <div class="project-links">
+              <a href="https://slaycrm.eu" target="_blank" rel="noopener" class="link-btn link-demo">Visit<br />SlayCRM&nbsp;&rarr;</a>
+              <span class="project-meta">Commercial Project<br />(Kendev AB)</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 2: Airene Vibe Coding -->
+        <article class="project-card">
+          <div class="project-preview">
+            <img src="images/vibecoding.png" alt="Airene Vibe Coding Preview" />
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="badge">Astro</span>
+              <span class="badge">TypeScript</span>
+              <span class="badge">AI Workshops</span>
+              <span class="badge">Community</span>
+            </div>
+            <h3 class="project-title">Airene Vibe Coding - Vibe Coding for Kids</h3>
+            <p class="project-description">
+              A hands-on workshop initiative and platform for kids (ages 5–12) to build games, animations, and stories using phones, tablets, or laptops with AI assistance - free, privacy-first, and without requiring accounts.
+            </p>
+            <div class="project-links">
+              <a href="https://vibecoding.bernting.se" target="_blank" rel="noopener" class="link-btn link-demo">Visit<br />Platform&nbsp;&rarr;</a>
+              <span class="project-meta">Educational Initiative<br />(KenDev AB &amp; Airene AB)</span>
+            </div>
+          </div>
+        </article>
+
+        <!-- Project 3: My Kitchen iOS App -->
+        <article class="project-card">
+          <div class="project-preview">
+            <div class="project-placeholder-thumb gradient-2">
+              <span>My Kitchen (iOS)</span>
+            </div>
+          </div>
+          <div class="project-body">
+            <div class="project-tags">
+              <span class="badge">SwiftUI</span>
+              <span class="badge">iOS 17+</span>
+              <span class="badge">Self-Built Tool</span>
+              <span class="badge">Local Storage</span>
+            </div>
+            <h3 class="project-title">My Kitchen - Native iOS App</h3>
+            <p class="project-description">
+              A native iPhone food inventory and waste-prevention app built for my own everyday personal use with SwiftUI. Features proactive expiry warnings, customizable target windows, fast search and filtering, and atomic JSON local storage with zero cloud dependencies.
+            </p>
+            <div class="project-links">
+              <a href="https://github.com/Natooorr/KitchenInventory" target="_blank" rel="noopener" class="link-btn link-demo">View on<br />GitHub&nbsp;&rarr;</a>
+              <span class="project-meta">Built for Personal<br />Everyday Use</span>
+            </div>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- Beyond the Code Section -->
+  <section id="interests" class="section section-alt">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">Beyond the Code</h2>
+        <p class="section-subtitle">What I enjoy when I'm not in front of a terminal.</p>
+      </div>
+
+      <div class="interests-grid">
+        <!-- Baking -->
+        <div class="interest-card">
+          <div class="interest-header">
+            <h3 class="interest-title">Baking</h3>
+          </div>
+          <ul class="interest-list">
+            <li>
+              <strong>Easy &amp; delicious:</strong> <em>Kolakakor</em> (chewy caramel cuts)&nbsp;- simple, nostalgic, and unbeatable with coffee.
+            </li>
+            <li>
+              <strong>Favorite:</strong> <em>Crème brûlée</em>&nbsp;- takes careful technique and torchwork, but the payoff is worth every minute.
+            </li>
+            <li>
+              <strong>Crowd pleaser:</strong> <em>Cheesecake</em>&nbsp;- rich, velvety, and always the first dessert to disappear at gatherings.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Board Games -->
+        <div class="interest-card">
+          <div class="interest-header">
+            <h3 class="interest-title">Board Games</h3>
+          </div>
+          <ul class="interest-list">
+            <li>
+              <strong>The absolute favorite:</strong> <em>Terraforming Mars</em>&nbsp;- my top pick for deep strategy and engine-building.
+            </li>
+            <li>
+              <strong>Easy party picks:</strong> <em>Codenames</em> &amp; <em>Coup</em>&nbsp;- fast to teach, high-interaction, and always a hit.
+            </li>
+            <li>
+              <strong>Honorable mention:</strong> <em>Dominion</em>&nbsp;- classic deckbuilder that I always want to bring back to the table.
+            </li>
+          </ul>
+        </div>
+
+        <!-- Video Games -->
+        <div class="interest-card">
+          <div class="interest-header">
+            <h3 class="interest-title">Video Games</h3>
+          </div>
+          <ul class="interest-list">
+            <li>
+              <strong>Solo runs:</strong> <em>Slay the Spire</em>&nbsp;- the ultimate benchmark for deckbuilding roguelikes and route planning.
+            </li>
+            <li>
+              <strong>With friends:</strong> <em>Terraria</em> and <em>League of Legends</em>&nbsp;- great for co-op progression and late-night matches.
+            </li>
+            <li>
+              <strong>The wild card:</strong> <em>Mewgenics</em>&nbsp;- a chaotic, turn-based cat-breeding roguelike with wonderfully unhinged mechanics.
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact & LinkedIn CTA -->
+  <section id="contact" class="section">
+    <div class="container contact-container">
+      <h2 class="section-title">Let's Connect</h2>
+      <p class="contact-subtitle">
+        I am currently wrapping up at Kendev AB in December and looking forward to my next software engineering adventure. Feel free to connect or send a message on LinkedIn!
+      </p>
+      <div class="contact-buttons">
+        <a href="https://www.linkedin.com/in/zachris-stenhammar-56bb15175/" target="_blank" rel="noopener" class="btn btn-primary btn-large">
+          <svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.2V10.9H6.46M7.83 6.64c-.95 0-1.72.77-1.72 1.72s.77 1.72 1.72 1.72 1.72-.77 1.72-1.72-.77-1.72-1.72Z"/>
+          </svg>
+          Connect on LinkedIn
+        </a>
+        <a href="https://github.com/Natooorr" target="_blank" rel="noopener" class="btn btn-secondary btn-large">
+          <svg class="icon" viewBox="0 0 24 24" width="20" height="20" fill="currentColor">
+            <path d="M12 2A10 10 0 0 0 2 12c0 4.42 2.87 8.17 6.84 9.5.5.08.66-.23.66-.5v-1.69c-2.77.6-3.36-1.34-3.36-1.34-.46-1.16-1.11-1.47-1.11-1.47-.91-.62.07-.6.07-.6 1 .07 1.53 1.03 1.53 1.03.87 1.52 2.34 1.07 2.91.83.1-.65.35-1.09.63-1.34-2.22-.25-4.55-1.11-4.55-4.92 0-1.11.38-2 1.03-2.71-.1-.25-.45-1.29.1-2.64 0 0 .84-.27 2.75 1.02.79-.22 1.65-.33 2.5-.33.85 0 1.71.11 2.5.33 1.91-1.29 2.75-1.02 2.75-1.02.55 1.35.2 2.39.1 2.64.65.71 1.03 1.6 1.03 2.71 0 3.82-2.34 4.66-4.57 4.91.36.31.69.92.69 1.85V21c0 .27.16.59.67.5C19.14 20.16 22 16.42 22 12A10 10 0 0 0 12 2Z"/>
+          </svg>
+          Explore GitHub (@Natooorr)
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <div class="container footer-container">
+      <p>&copy; 2026 Zachris Stenhammar. Built for GitHub Pages.</p>
+      <div class="footer-links">
+        <a href="https://www.linkedin.com/in/zachris-stenhammar-56bb15175/" target="_blank" rel="noopener">LinkedIn</a>
+        <a href="https://github.com/Natooorr" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
