@@ -104,6 +104,7 @@ function setupLanguageSwitcher() {
 
           // Update URL in address bar
           history.pushState({ langUrl: targetUrl }, doc.title, targetUrl);
+          lastPathname = window.location.pathname;
 
           // Re-bind theme and language listeners
           initTheme();
@@ -119,8 +120,14 @@ function setupLanguageSwitcher() {
   });
 }
 
+// Track pathname to only reload on language page transitions (back/forward between pages),
+// never for in-page hash/anchor links (#about, #experience, etc.)
+let lastPathname = window.location.pathname;
+
 window.addEventListener('popstate', () => {
-  window.location.reload();
+  if (window.location.pathname !== lastPathname) {
+    window.location.reload();
+  }
 });
 
 // Interactive Hobby Icons Click Handlers
