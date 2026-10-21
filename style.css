@@ -12,7 +12,7 @@
   --accent-hover: #0284c7;
   --accent-glow: rgba(56, 189, 248, 0.15);
   --success: #10b981;
-  --transition: all 0.2s ease-in-out;
+  --transition: all 0.3s ease;
   --radius-sm: 6px;
   --radius-md: 10px;
   --radius-lg: 16px;
@@ -103,6 +103,7 @@ body {
 
 .section-alt {
   background-color: var(--bg-secondary);
+  transition: background-color 0.3s ease;
 }
 
 .section-header {
@@ -137,7 +138,7 @@ body {
   background-color: rgba(15, 23, 42, 0.85);
   backdrop-filter: blur(12px);
   border-bottom: 1px solid var(--border-color);
-  transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 [data-theme="light"] .header {
@@ -189,15 +190,16 @@ body {
   padding: 0.25rem 0.55rem;
   border: 1px solid var(--border-color);
   border-radius: var(--radius-sm);
-  background: var(--bg-card);
+  background-color: var(--bg-card);
   font-size: 0.82rem;
   font-weight: 600;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .lang-btn {
   color: var(--text-muted);
   text-decoration: none;
-  transition: var(--transition);
+  transition: color 0.3s ease;
   padding: 0.1rem 0.25rem;
   border-radius: 3px;
 }
@@ -244,7 +246,7 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 0.5rem;
-  background: var(--accent-glow);
+  background-color: var(--accent-glow);
   color: var(--accent);
   font-size: 0.85rem;
   font-weight: 600;
@@ -252,6 +254,7 @@ body {
   border-radius: 9999px;
   border: 1px solid rgba(56, 189, 248, 0.25);
   margin-bottom: 1.5rem;
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
 .status-dot {
@@ -387,10 +390,11 @@ body {
 }
 
 .skills-card {
-  background: var(--bg-card);
+  background-color: var(--bg-card);
   padding: 2rem;
   border-radius: var(--radius-lg);
   border: 1px solid var(--border-color);
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .skills-heading {
@@ -405,7 +409,7 @@ body {
 }
 
 .tag {
-  background: var(--bg-secondary);
+  background-color: var(--bg-secondary);
   border: 1px solid var(--border-color);
   color: var(--text-primary);
   padding: 0.45rem 0.65rem;
@@ -417,6 +421,7 @@ body {
   align-items: center;
   justify-content: center;
   flex: 1 1 calc(50% - 0.6rem);
+  transition: background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease;
 }
 
 /* Projects Grid */
@@ -503,13 +508,14 @@ body {
   font-size: 0.75rem;
   font-weight: 600;
   color: var(--accent);
-  background: var(--accent-glow);
+  background-color: var(--accent-glow);
   padding: 0.25rem 0.65rem;
   border-radius: var(--radius-sm);
   white-space: nowrap;
   display: inline-flex;
   align-items: center;
   line-height: 1.2;
+  transition: background-color 0.3s ease, color 0.3s ease;
 }
 
 .project-title {
@@ -589,13 +595,14 @@ body {
 }
 
 .interest-card {
-  background: var(--bg-card);
+  background-color: var(--bg-card);
   border: 1px solid var(--border-color);
   border-radius: var(--radius-lg);
   padding: 2rem;
   display: flex;
   flex-direction: column;
   cursor: default;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .interest-header {
@@ -613,7 +620,7 @@ body {
   height: 2.5rem;
   border-radius: var(--radius-md);
   flex-shrink: 0;
-  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  transition: transform 0.25s ease, background-color 0.3s ease, border-color 0.3s ease, color 0.3s ease, box-shadow 0.3s ease;
   font-family: inherit;
   font-size: inherit;
   line-height: inherit;
@@ -835,21 +842,21 @@ body {
 
 /* Fun vibrant color identities for each hobby */
 .icon-baking {
-  background: rgba(245, 158, 11, 0.16);
+  background-color: rgba(245, 158, 11, 0.16);
   color: #f59e0b;
   border: 1px solid rgba(245, 158, 11, 0.25);
   box-shadow: 0 2px 10px rgba(245, 158, 11, 0.12);
 }
 
 .icon-games {
-  background: rgba(16, 185, 129, 0.16);
+  background-color: rgba(16, 185, 129, 0.16);
   color: #10b981;
   border: 1px solid rgba(16, 185, 129, 0.25);
   box-shadow: 0 2px 10px rgba(16, 185, 129, 0.12);
 }
 
 .icon-gaming {
-  background: rgba(168, 85, 247, 0.16);
+  background-color: rgba(168, 85, 247, 0.16);
   color: #a855f7;
   border: 1px solid rgba(168, 85, 247, 0.25);
   box-shadow: 0 2px 10px rgba(168, 85, 247, 0.12);
@@ -857,21 +864,21 @@ body {
 
 /* Light Mode Contrast Tuning */
 [data-theme="light"] .icon-baking {
-  background: #fef3c7;
+  background-color: #fef3c7;
   color: #d97706;
   border-color: #fde68a;
   box-shadow: 0 2px 8px rgba(217, 119, 6, 0.15);
 }
 
 [data-theme="light"] .icon-games {
-  background: #d1fae5;
+  background-color: #d1fae5;
   color: #059669;
   border-color: #a7f3d0;
   box-shadow: 0 2px 8px rgba(5, 150, 105, 0.15);
 }
 
 [data-theme="light"] .icon-gaming {
-  background: #f3e8ff;
+  background-color: #f3e8ff;
   color: #7c3aed;
   border-color: #e9d5ff;
   box-shadow: 0 2px 8px rgba(124, 58, 237, 0.15);
@@ -879,21 +886,21 @@ body {
 
 /* Dark Mode Glow Tuning */
 [data-theme="dark"] .icon-baking {
-  background: rgba(245, 158, 11, 0.2);
+  background-color: rgba(245, 158, 11, 0.2);
   color: #fbbf24;
   border-color: rgba(251, 191, 36, 0.35);
   box-shadow: 0 0 14px rgba(245, 158, 11, 0.2);
 }
 
 [data-theme="dark"] .icon-games {
-  background: rgba(16, 185, 129, 0.2);
+  background-color: rgba(16, 185, 129, 0.2);
   color: #34d399;
   border-color: rgba(52, 211, 153, 0.35);
   box-shadow: 0 0 14px rgba(16, 185, 129, 0.2);
 }
 
 [data-theme="dark"] .icon-gaming {
-  background: rgba(168, 85, 247, 0.2);
+  background-color: rgba(168, 85, 247, 0.2);
   color: #c084fc;
   border-color: rgba(192, 132, 252, 0.35);
   box-shadow: 0 0 14px rgba(168, 85, 247, 0.2);
@@ -956,8 +963,9 @@ body {
   width: 12px;
   height: 12px;
   border-radius: 50%;
-  background: var(--accent);
+  background-color: var(--accent);
   border: 3px solid var(--bg-primary);
+  transition: border-color 0.3s ease, background-color 0.3s ease;
 }
 
 .timeline-meta {
@@ -1039,6 +1047,28 @@ body {
   padding: 2.5rem 0;
   font-size: 0.9rem;
   color: var(--text-muted);
+  transition: border-color 0.3s ease, color 0.3s ease;
+}
+
+/* Synchronized Dark / Light Theme Color Transitions (0.3s ease across all elements) */
+.hero-subtitle,
+.section-subtitle,
+.contact-subtitle,
+.project-description,
+.project-meta,
+.timeline-company,
+.timeline-desc,
+.timeline-bullets li,
+.interest-list,
+.interest-list strong,
+.interest-list em,
+.text-muted,
+.text-secondary,
+.highlight,
+.about-highlights,
+.highlight-item,
+.section-line {
+  transition: color 0.3s ease, background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .footer-container {
