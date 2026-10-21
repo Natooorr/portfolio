@@ -598,7 +598,304 @@ body {
 }
 
 .interest-header {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
   margin-bottom: 1.25rem;
+}
+
+.interest-header-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.5rem;
+  height: 2.5rem;
+  border-radius: var(--radius-md);
+  flex-shrink: 0;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+  font-family: inherit;
+  font-size: inherit;
+  line-height: inherit;
+  padding: 0;
+  margin: 0;
+  cursor: pointer;
+  position: relative;
+  user-select: none;
+  -webkit-appearance: none;
+  appearance: none;
+}
+
+.interest-header-icon:focus-visible {
+  outline: 2px solid var(--accent-primary);
+  outline-offset: 3px;
+}
+
+.interest-card:hover .interest-header-icon {
+  transform: scale(1.06);
+}
+
+.interest-header-icon:hover {
+  transform: scale(1.12);
+}
+
+.interest-header-icon:active {
+  transform: scale(0.94);
+}
+
+/* Hobby Icon Interactive Animations */
+.interest-header-icon.anim-baking {
+  animation: bakeRise 0.65s cubic-bezier(0.34, 1.56, 0.64, 1);
+}
+
+/* Fix: Only the dice SVG inside rotates, leaving the button box and floating number badge completely level */
+.interest-header-icon.anim-dice {
+  transform: scale(1.08);
+}
+
+.interest-header-icon.anim-dice svg {
+  animation: diceTumble 0.7s cubic-bezier(0.25, 1, 0.5, 1);
+  transform-origin: center center;
+}
+
+@keyframes bakeRise {
+  0% { transform: scale(1) translateY(0); }
+  22% { transform: scale(0.85, 0.8) translateY(3px); }
+  52% { transform: scale(1.22, 1.2) translateY(-6px); }
+  75% { transform: scale(0.96, 0.98) translateY(1px); }
+  100% { transform: scale(1) translateY(0); }
+}
+
+@keyframes diceTumble {
+  0% { transform: rotate(0deg) scale(1); }
+  20% { transform: rotate(-50deg) scale(1.2); }
+  45% { transform: rotate(260deg) scale(1.25); }
+  70% { transform: rotate(520deg) scale(1.1); }
+  88% { transform: rotate(700deg) scale(0.96); }
+  100% { transform: rotate(720deg) scale(1); }
+}
+
+/* Video Games: 8-Bit Jump & 3D Metallic Gold Coin */
+.interest-header-icon.icon-gaming.anim-gaming svg {
+  animation: gameJump 0.65s cubic-bezier(0.25, 1, 0.5, 1);
+}
+@keyframes gameJump {
+  0% { transform: translateY(0) scale(1, 1); }
+  20% { transform: translateY(3px) scale(1.2, 0.75); }
+  45% { transform: translateY(-11px) scale(0.9, 1.2); }
+  75% { transform: translateY(1px) scale(1.05, 0.95); }
+  100% { transform: translateY(0) scale(1, 1); }
+}
+
+.opt2-coin-wrap {
+  position: absolute;
+  left: 50%;
+  bottom: 70%;
+  transform: translateX(-50%);
+  pointer-events: none;
+  z-index: 35;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  perspective: 600px;
+  animation: coinRiseSpin 0.9s cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards;
+}
+
+.opt2-coin-svg {
+  width: 24px;
+  height: 24px;
+  filter: drop-shadow(0 0 10px rgba(250, 204, 21, 0.85)) drop-shadow(0 2px 4px rgba(0, 0, 0, 0.35));
+}
+
+@keyframes coinRiseSpin {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(4px) scale(0.3) rotateY(0deg);
+  }
+  25% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-22px) scale(1.25) rotateY(360deg);
+  }
+  65% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-38px) scale(1.1) rotateY(720deg);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-52px) scale(0.7) rotateY(1080deg);
+  }
+}
+
+.opt2-sparkle {
+  position: absolute;
+  font-size: 0.75rem;
+  pointer-events: none;
+  z-index: 36;
+  animation: coinSparkle 0.6s ease-out forwards;
+}
+
+@keyframes coinSparkle {
+  0% { opacity: 0; transform: translate(0, 0) scale(0.4); }
+  40% { opacity: 1; transform: translate(var(--sx), var(--sy)) scale(1.2); }
+  100% { opacity: 0; transform: translate(calc(var(--sx) * 1.5), calc(var(--sy) * 1.5)) scale(0.5); }
+}
+
+/* Floating Baking Crumbs / Steam Sparkles */
+.particle-crumb {
+  position: absolute;
+  pointer-events: none;
+  font-size: 0.85rem;
+  line-height: 1;
+  z-index: 30;
+  user-select: none;
+  animation: crumbFloat 0.75s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes crumbFloat {
+  0% {
+    opacity: 0;
+    transform: translate(0, 0) scale(0.4);
+  }
+  30% {
+    opacity: 1;
+    transform: translate(var(--dx), calc(var(--dy) * 0.4)) scale(1.15);
+  }
+  100% {
+    opacity: 0;
+    transform: translate(var(--dx), var(--dy)) scale(0.7);
+  }
+}
+
+/* Floating Dice Roll Pill Badge */
+.dice-roll-badge {
+  position: absolute;
+  bottom: calc(100% + 8px);
+  left: 50%;
+  transform: translateX(-50%) translateY(0);
+  background: var(--bg-card);
+  color: #10b981;
+  border: 1px solid #10b981;
+  box-shadow: 0 4px 14px rgba(16, 185, 129, 0.35);
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.22rem 0.6rem;
+  border-radius: 9999px;
+  white-space: nowrap;
+  pointer-events: none;
+  z-index: 30;
+  user-select: none;
+  animation: diceBadgePop 1.25s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+[data-theme="light"] .dice-roll-badge {
+  background: #ffffff;
+  color: #059669;
+  border-color: #10b981;
+  box-shadow: 0 4px 12px rgba(5, 150, 105, 0.2);
+}
+
+.dice-roll-badge.is-nat20 {
+  color: #f59e0b;
+  border-color: #f59e0b;
+  box-shadow: 0 0 16px rgba(245, 158, 11, 0.5);
+}
+
+.dice-roll-badge.is-nat1 {
+  color: #ef4444;
+  border-color: #ef4444;
+  box-shadow: 0 0 16px rgba(239, 68, 68, 0.4);
+}
+
+@keyframes diceBadgePop {
+  0% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(8px) scale(0.6);
+  }
+  20% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-2px) scale(1.1);
+  }
+  35% {
+    transform: translateX(-50%) translateY(0) scale(1);
+  }
+  80% {
+    opacity: 1;
+    transform: translateX(-50%) translateY(-2px) scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: translateX(-50%) translateY(-12px) scale(0.85);
+  }
+}
+
+.interest-header-icon svg {
+  width: 1.45rem;
+  height: 1.45rem;
+}
+
+/* Fun vibrant color identities for each hobby */
+.icon-baking {
+  background: rgba(245, 158, 11, 0.16);
+  color: #f59e0b;
+  border: 1px solid rgba(245, 158, 11, 0.25);
+  box-shadow: 0 2px 10px rgba(245, 158, 11, 0.12);
+}
+
+.icon-games {
+  background: rgba(16, 185, 129, 0.16);
+  color: #10b981;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+  box-shadow: 0 2px 10px rgba(16, 185, 129, 0.12);
+}
+
+.icon-gaming {
+  background: rgba(168, 85, 247, 0.16);
+  color: #a855f7;
+  border: 1px solid rgba(168, 85, 247, 0.25);
+  box-shadow: 0 2px 10px rgba(168, 85, 247, 0.12);
+}
+
+/* Light Mode Contrast Tuning */
+[data-theme="light"] .icon-baking {
+  background: #fef3c7;
+  color: #d97706;
+  border-color: #fde68a;
+  box-shadow: 0 2px 8px rgba(217, 119, 6, 0.15);
+}
+
+[data-theme="light"] .icon-games {
+  background: #d1fae5;
+  color: #059669;
+  border-color: #a7f3d0;
+  box-shadow: 0 2px 8px rgba(5, 150, 105, 0.15);
+}
+
+[data-theme="light"] .icon-gaming {
+  background: #f3e8ff;
+  color: #7c3aed;
+  border-color: #e9d5ff;
+  box-shadow: 0 2px 8px rgba(124, 58, 237, 0.15);
+}
+
+/* Dark Mode Glow Tuning */
+[data-theme="dark"] .icon-baking {
+  background: rgba(245, 158, 11, 0.2);
+  color: #fbbf24;
+  border-color: rgba(251, 191, 36, 0.35);
+  box-shadow: 0 0 14px rgba(245, 158, 11, 0.2);
+}
+
+[data-theme="dark"] .icon-games {
+  background: rgba(16, 185, 129, 0.2);
+  color: #34d399;
+  border-color: rgba(52, 211, 153, 0.35);
+  box-shadow: 0 0 14px rgba(16, 185, 129, 0.2);
+}
+
+[data-theme="dark"] .icon-gaming {
+  background: rgba(168, 85, 247, 0.2);
+  color: #c084fc;
+  border-color: rgba(192, 132, 252, 0.35);
+  box-shadow: 0 0 14px rgba(168, 85, 247, 0.2);
 }
 
 .interest-title {
