@@ -1,55 +1,128 @@
 // Theme toggle handling
-const themeToggleBtn = document.getElementById('theme-toggle');
 const htmlElement = document.documentElement;
 
-// Check saved theme or system preference
-const savedTheme = localStorage.getItem('theme');
-const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+function initTheme() {
+  const themeToggleBtn = document.getElementById('theme-toggle');
+  const savedTheme = localStorage.getItem('theme');
+  const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
 
-if (savedTheme) {
-  htmlElement.setAttribute('data-theme', savedTheme);
-  updateToggleIcon(savedTheme);
-} else if (!systemPrefersDark) {
-  htmlElement.setAttribute('data-theme', 'light');
-  updateToggleIcon('light');
-} else {
-  htmlElement.setAttribute('data-theme', 'dark');
-  updateToggleIcon('dark');
+  let activeTheme = 'dark';
+  if (savedTheme) {
+    activeTheme = savedTheme;
+  } else if (!systemPrefersDark) {
+    activeTheme = 'light';
+  }
+
+  htmlElement.setAttribute('data-theme', activeTheme);
+  updateToggleIcon(themeToggleBtn, activeTheme);
+
+  if (themeToggleBtn) {
+    themeToggleBtn.onclick = () => {
+      const currentTheme = htmlElement.getAttribute('data-theme') || 'dark';
+      const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+      htmlElement.setAttribute('data-theme', newTheme);
+      localStorage.setItem('theme', newTheme);
+      updateToggleIcon(themeToggleBtn, newTheme);
+    };
+  }
 }
 
-themeToggleBtn.addEventListener('click', () => {
-  const currentTheme = htmlElement.getAttribute('data-theme') || 'dark';
-  const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
-  
-  htmlElement.setAttribute('data-theme', newTheme);
-  localStorage.setItem('theme', newTheme);
-  updateToggleIcon(newTheme);
-});
-
-function updateToggleIcon(theme) {
-  themeToggleBtn.textContent = theme === 'light' ? '☀️' : '🌙';
+function updateToggleIcon(btn, theme) {
+  if (btn) {
+    btn.textContent = theme === 'light' ? '☀️' : '🌙';
+  }
 }
 
-// Preserve scroll position when switching language
-const langButtons = document.querySelectorAll('.lang-btn');
-langButtons.forEach(btn => {
-  btn.addEventListener('click', () => {
-    sessionStorage.setItem('langSwitchScrollY', window.scrollY.toString());
-  });
-});
+// Ensure manual scroll restoration
+if ('scrollRestoration' in history) {
+  history.scrollRestoration = 'manual';
+}
 
+// Restore saved scroll position immediately on page load
 const savedScrollY = sessionStorage.getItem('langSwitchScrollY');
 if (savedScrollY !== null) {
+  const y = parseInt(savedScrollY, 10);
+  window.scrollTo({ top: y, behavior: 'instant' });
   sessionStorage.removeItem('langSwitchScrollY');
-  window.scrollTo({
-    top: parseInt(savedScrollY, 10),
-    behavior: 'instant'
-  });
-  // Also re-apply after full load in case of images loading
   window.addEventListener('load', () => {
-    window.scrollTo({
-      top: parseInt(savedScrollY, 10),
-      behavior: 'instant'
-    });
+    window.scrollTo({ top: y, behavior: 'instant' });
   }, { once: true });
 }
+
+// Language switch with seamless in-place swap & fallback
+function setupLanguageSwitcher() {
+  const langButtons = document.querySelectorAll('.lang-btn');
+  langButtons.forEach(btn => {
+    btn.onclick = async (e) => {
+      if (btn.classList.contains('active')) {
+        e.preventDefault();
+        return;
+      }
+
+      const targetUrl = btn.getAttribute('href');
+      if (!targetUrl || targetUrl.startsWith('#')) return;
+
+      const currentScroll = window.scrollY;
+      sessionStorage.setItem('langSwitchScrollY', currentScroll.toString());
+
+      // Attempt seamless in-page swap if served over http/https
+      if (window.location.protocol.startsWith('http')) {
+        e.preventDefault();
+        try {
+          const res = await fetch(targetUrl);
+          if (!res.ok) throw new Error('Fetch failed');
+          const htmlText = await res.text();
+          const parser = new DOMParser();
+          const doc = parser.parseFromString(htmlText, 'text/html');
+
+          // Update html lang and title
+          document.documentElement.lang = doc.documentElement.lang || 'en';
+          document.title = doc.title;
+
+          // Swap navigation header
+          const oldHeader = document.querySelector('.header');
+          const newHeader = doc.querySelector('.header');
+          if (oldHeader && newHeader) {
+            oldHeader.innerHTML = newHeader.innerHTML;
+          }
+
+          // Swap main content sections
+          const oldSections = document.querySelectorAll('section');
+          const newSections = doc.querySelectorAll('section');
+          oldSections.forEach((sec, idx) => {
+            if (newSections[idx]) {
+              sec.innerHTML = newSections[idx].innerHTML;
+            }
+          });
+
+          // Swap footer
+          const oldFooter = document.querySelector('footer');
+          const newFooter = doc.querySelector('footer');
+          if (oldFooter && newFooter) {
+            oldFooter.innerHTML = newFooter.innerHTML;
+          }
+
+          // Update URL in address bar
+          history.pushState({ langUrl: targetUrl }, doc.title, targetUrl);
+
+          // Re-bind theme and language listeners
+          initTheme();
+          setupLanguageSwitcher();
+
+          // Maintain exact scroll position
+          window.scrollTo({ top: currentScroll, behavior: 'instant' });
+        } catch (err) {
+          window.location.href = targetUrl;
+        }
+      }
+    };
+  });
+}
+
+window.addEventListener('popstate', () => {
+  window.location.reload();
+});
+
+// Initialize on page load
+initTheme();
+setupLanguageSwitcher();

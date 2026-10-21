@@ -17,6 +17,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Immediate Scroll Restoration on Language Switch -->
+  <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    const savedY = sessionStorage.getItem('langSwitchScrollY');
+    if (savedY !== null) {
+      window.scrollTo(0, parseInt(savedY, 10));
+    }
+  </script>
 </head>
 <body>
   <!-- Header / Navigation -->
@@ -52,7 +62,7 @@
         <span class="gradient-text">Software Developer</span> &amp; Chalmers Graduate.
       </h1>
       <p class="hero-subtitle">
-        Building and scaling <a href="https://slaycrm.eu" target="_blank" rel="noopener" class="text-link"><strong>SlayCRM</strong></a> at <a href="https://kendev.se" target="_blank" rel="noopener" class="text-link"><strong>Kendev AB</strong></a>, specializing in full-stack TypeScript, reactive frontends, and modern AI agent workflows.
+        Building and scaling <a href="https://slaycrm.eu" target="_blank" rel="noopener" class="text-link"><strong>SlayCRM</strong></a> at <a href="https://kendev.se" target="_blank" rel="noopener" class="text-link"><strong>Kendev AB</strong></a> with full-stack TypeScript, reactive frontends, and modern AI agent workflows.
       </p>
       <div class="hero-cta">
         <a href="#projects" class="btn btn-primary">View Projects</a>
@@ -88,19 +98,19 @@
             <div class="highlight-item">
               <span class="highlight-bullet">▹</span>
               <div>
-                <strong>Full-Stack Web Development:</strong> Engineering responsive, component-driven interfaces in TypeScript, React, and Vite, backed by Supabase and Node.js.
+                <strong>Full-Stack Web Development:</strong> Engineering responsive, component-driven interfaces in React and TypeScript, backed by Node.js and Supabase.
               </div>
             </div>
             <div class="highlight-item">
               <span class="highlight-bullet">▹</span>
               <div>
-                <strong>AI &amp; Agent Tooling:</strong> Integrating conversational AI models and Model Context Protocol (MCP) adapters directly into production workflows.
+                <strong>AI &amp; Agent Tooling:</strong> Architecting conversational agents and custom MCP tools in Kubernetes for database mutations and telephony automation.
               </div>
             </div>
             <div class="highlight-item">
               <span class="highlight-bullet">▹</span>
               <div>
-                <strong>Engineering Rigor:</strong> Prioritizing maintainable code covered by automated unit and end-to-end testing with Vitest and Playwright.
+                <strong>Engineering Rigor:</strong> Prioritizing maintainable code covered by automated testing with Vitest and Playwright.
               </div>
             </div>
             <div class="highlight-item">
@@ -118,12 +128,12 @@
             <span class="tag">React &amp; Vite</span>
             <span class="tag">Node.js</span>
             <span class="tag">Supabase &amp; SQL</span>
-            <span class="tag">Swift &amp; SwiftUI</span>
-            <span class="tag">Vitest &amp; Playwright</span>
-            <span class="tag">Storybook</span>
+            <span class="tag">Kubernetes</span>
             <span class="tag">AI / MCP Tooling</span>
+            <span class="tag">Vitest &amp; Playwright</span>
+            <span class="tag">Webhooks &amp; Telephony</span>
+            <span class="tag">Swift &amp; SwiftUI</span>
             <span class="tag">Git &amp; GitHub</span>
-            <span class="tag">REST APIs</span>
           </div>
         </div>
       </div>
@@ -148,10 +158,10 @@
           <div class="timeline-content">
             <h3 class="timeline-role">Software Developer - <a href="https://slaycrm.eu" target="_blank" rel="noopener" class="text-link">SlayCRM</a></h3>
             <ul class="timeline-bullets">
-              <li>Shipped full-stack features and reactive UI components using TypeScript, React, and Vite.</li>
-              <li>Connected backend data services and database operations with Supabase.</li>
-              <li>Maintained test reliability through automated pipelines using Vitest and Playwright.</li>
-              <li>Integrated Model Context Protocol (MCP) adapters to power AI chatbot capabilities.</li>
+              <li>Architected an AI chatbot and MCP tools for CRM database queries, updates, and scheduling via conversational natural language, with audit logs and rollback safety.</li>
+              <li>Engineered an inbound telephony pipeline (46elks + speech-to-text) to parse caller intent from audio webhooks and trigger automated CRM mutations with SMS confirmations.</li>
+              <li>Deployed containerized agent environments in Kubernetes to guarantee secure runtime sandboxing across SlayCRM and Airene.</li>
+              <li>Developed full-stack reactive features in TypeScript, React, and Vite backed by Supabase with automated end-to-end testing via Playwright.</li>
             </ul>
           </div>
         </div>
@@ -160,10 +170,10 @@
         <div class="timeline-item">
           <div class="timeline-meta">
             <span class="timeline-period">Class of 2026</span>
-            <span class="timeline-company">Chalmers University of Technology</span>
+            <span class="timeline-company">Chalmers University</span>
           </div>
           <div class="timeline-content">
-            <h3 class="timeline-role">Higher Education Degree in Technology / Computer Science</h3>
+            <h3 class="timeline-role">Higher Education Degree / Computer Science</h3>
             <ul class="timeline-bullets">
               <li>Comprehensive training in computer science, software architecture, and algorithm design.</li>
               <li>Collaborative engineering projects focusing on clean code principles and distributed systems.</li>
@@ -192,12 +202,12 @@
             <div class="project-tags">
               <span class="badge">TypeScript</span>
               <span class="badge">React &amp; Vite</span>
-              <span class="badge">Supabase</span>
+              <span class="badge">Kubernetes</span>
               <span class="badge">AI / MCP</span>
             </div>
             <h3 class="project-title">SlayCRM - Modern CRM Platform</h3>
             <p class="project-description">
-              A high-performance modern CRM system built for seamless customer data workflows. Features comprehensive route tree management, automated end-to-end testing, and conversational AI assistants with custom MCP tool integration.
+              A modern CRM platform featuring conversational AI agents isolated in Kubernetes. Supports natural-language database mutations with rollback safety, plus an automated telephony pipeline (46elks + speech-to-text) turning phone calls into CRM actions with SMS confirmation.
             </p>
             <div class="project-links">
               <a href="https://slaycrm.eu" target="_blank" rel="noopener" class="link-btn link-demo">Visit<br />SlayCRM&nbsp;&rarr;</a>
@@ -215,12 +225,12 @@
             <div class="project-tags">
               <span class="badge">Astro</span>
               <span class="badge">TypeScript</span>
-              <span class="badge">AI Workshops</span>
-              <span class="badge">Community</span>
+              <span class="badge">Kubernetes</span>
+              <span class="badge">Agent Prompting</span>
             </div>
             <h3 class="project-title">Airene Vibe Coding - Vibe Coding for Kids</h3>
             <p class="project-description">
-              A hands-on workshop initiative and platform for kids (ages 5–12) to build games, animations, and stories using phones, tablets, or laptops with AI assistance - free, privacy-first, and without requiring accounts.
+              A hands-on workshop initiative and platform for kids to build games and animations with AI assistance. Refined agent system prompts and behavior, restored MCP tool integrations, and isolated agent execution in Kubernetes sandboxes.
             </p>
             <div class="project-links">
               <a href="https://vibecoding.bernting.se" target="_blank" rel="noopener" class="link-btn link-demo">Visit<br />Platform&nbsp;&rarr;</a>
@@ -245,7 +255,7 @@
             </div>
             <h3 class="project-title">My Kitchen - Native iOS App</h3>
             <p class="project-description">
-              A native iPhone food inventory and waste-prevention app built for my own everyday personal use with SwiftUI. Features proactive expiry warnings, customizable warning timings, fast search and filtering, and atomic JSON local storage with zero cloud dependencies.
+              A native iPhone food inventory and waste-prevention app built with SwiftUI for everyday personal use. Features expiry alerts, customizable warning intervals, fast search, and local atomic JSON storage with zero cloud dependencies.
             </p>
             <div class="project-links">
               <a href="https://github.com/Natooorr/KitchenInventory" target="_blank" rel="noopener" class="link-btn link-demo">View on<br />GitHub&nbsp;&rarr;</a>
@@ -294,10 +304,10 @@
               <strong>Easy party picks:</strong> <em>Codenames</em> &amp; <em>Coup</em>&nbsp;- fast to teach, high-interaction, and always a hit with any group.
             </li>
             <li>
-              <strong>Always come back to:</strong> <em>Dominion</em>&nbsp;- the classic deckbuilder that I always want back on the table.
+              <strong>Always come back to:</strong> <em>Dominion</em>&nbsp;- the classic deckbuilder that I always want back on the gaming table.
             </li>
             <li>
-              <strong>Favorite:</strong> <em>Terraforming Mars</em>&nbsp;- my top pick for deep strategy and engine-building.
+              <strong>Favorite:</strong> <em>Terraforming Mars</em>&nbsp;- my top pick for deep strategy, resource engine-building, and planning.
             </li>
           </ul>
         </div>

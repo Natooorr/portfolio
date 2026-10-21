@@ -18,6 +18,16 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Immediate Scroll Restoration on Language Switch -->
+  <script>
+    if ('scrollRestoration' in history) {
+      history.scrollRestoration = 'manual';
+    }
+    const savedY = sessionStorage.getItem('langSwitchScrollY');
+    if (savedY !== null) {
+      window.scrollTo(0, parseInt(savedY, 10));
+    }
+  </script>
 </head>
 <body>
   <!-- Header / Navigation -->
@@ -53,7 +63,7 @@
         <span class="gradient-text">Mjukvaruutvecklare</span> &amp; Chalmers-alumn.
       </h1>
       <p class="hero-subtitle">
-        Bygger och skalar <a href="https://slaycrm.eu" target="_blank" rel="noopener" class="text-link"><strong>SlayCRM</strong></a> hos <a href="https://kendev.se" target="_blank" rel="noopener" class="text-link"><strong>KenDev AB</strong></a>, med fokus på fullstack TypeScript, reaktiva frontendgränssnitt och moderna AI-agentflöden.
+        Bygger och skalar <a href="https://slaycrm.eu" target="_blank" rel="noopener" class="text-link"><strong>SlayCRM</strong></a> hos <a href="https://kendev.se" target="_blank" rel="noopener" class="text-link"><strong>KenDev AB</strong></a>, med fullstack TypeScript, reaktiva gränssnitt och moderna AI-agentflöden.
       </p>
       <div class="hero-cta">
         <a href="#projects" class="btn btn-primary">Visa projekt</a>
@@ -83,7 +93,7 @@
       <div class="about-grid">
         <div class="about-text">
           <p class="lead-text">
-            Fokuserad på att bygga snabba, skalbara webbapplikationer och integrera praktiska AI-verktyg i verkliga produktionsflöden.
+            Fokuserad på att bygga skalbara webbapplikationer och integrera praktiska AI-verktyg i produktionsflöden.
           </p>
           <div class="about-highlights">
             <div class="highlight-item">
@@ -95,13 +105,13 @@
             <div class="highlight-item">
               <span class="highlight-bullet">▹</span>
               <div>
-                <strong>AI- och agentverktyg:</strong> Integrerar konversationsmodeller och Model Context Protocol (MCP)-adaptrar direkt i verksamhetskritiska system.
+                <strong>AI- och agentverktyg:</strong> Arkitekterar konversationsagenter och egna MCP-verktyg i Kubernetes för databasoperationer och telefonistyrning.
               </div>
             </div>
             <div class="highlight-item">
               <span class="highlight-bullet">▹</span>
               <div>
-                <strong>Ingenjörsmässig kvalitet:</strong> Prioriterar underhållbar kod med automatiserade enhets- och end-to-end-tester via Vitest och Playwright.
+                <strong>Ingenjörsmässig kvalitet:</strong> Prioriterar underhållbar kod med automatiserade tester via Vitest och Playwright.
               </div>
             </div>
             <div class="highlight-item">
@@ -119,12 +129,12 @@
             <span class="tag">React &amp; Vite</span>
             <span class="tag">Node.js</span>
             <span class="tag">Supabase &amp; SQL</span>
-            <span class="tag">Swift &amp; SwiftUI</span>
-            <span class="tag">Vitest &amp; Playwright</span>
-            <span class="tag">Storybook</span>
+            <span class="tag">Kubernetes</span>
             <span class="tag">AI / MCP-verktyg</span>
+            <span class="tag">Vitest &amp; Playwright</span>
+            <span class="tag">Webhooks &amp; telefoni</span>
+            <span class="tag">Swift &amp; SwiftUI</span>
             <span class="tag">Git &amp; GitHub</span>
-            <span class="tag">REST API:er</span>
           </div>
         </div>
       </div>
@@ -149,10 +159,10 @@
           <div class="timeline-content">
             <h3 class="timeline-role">Mjukvaruutvecklare - <a href="https://slaycrm.eu" target="_blank" rel="noopener" class="text-link">SlayCRM</a></h3>
             <ul class="timeline-bullets">
-              <li>Utvecklade fullstack-funktionalitet och reaktiva UI-komponenter i TypeScript, React och Vite.</li>
-              <li>Kopplade samman backend-tjänster och databaslogik med Supabase.</li>
-              <li>Upprätthöll testkvalitet och CI-flöden via Vitest och Playwright.</li>
-              <li>Integrerade Model Context Protocol (MCP)-adaptrar för AI-drivna chatbotfunktioner.</li>
+              <li>Arkitekterade en AI-chattbot och MCP-verktyg för databasfrågor, uppdateringar och mötesbokning via naturligt språk, med behörighetsstyrning, loggar och möjlighet att ångra ändringar.</li>
+              <li>Byggde ett telefoniflöde (46elks + rösttolkning) som tolkar uppringarens avsikt från audio-webhooks och automatiskt utför CRM-ändringar med SMS-bekräftelser.</li>
+              <li>Driftsatte containermiljöer i Kubernetes för att garantera säker runtime-sandboxing för agenterna i både SlayCRM och Airene.</li>
+              <li>Utvecklade fullstack-funktionalitet och reaktiva UI-komponenter i TypeScript, React och Vite mot Supabase, med automatiserade tester via Playwright.</li>
             </ul>
           </div>
         </div>
@@ -193,12 +203,12 @@
             <div class="project-tags">
               <span class="badge">TypeScript</span>
               <span class="badge">React &amp; Vite</span>
-              <span class="badge">Supabase</span>
+              <span class="badge">Kubernetes</span>
               <span class="badge">AI / MCP</span>
             </div>
             <h3 class="project-title">SlayCRM - Modern CRM-plattform</h3>
             <p class="project-description">
-              Ett högpresterande modernt CRM-system optimerat för smidiga arbetsflöden inom fältsälj. Inkluderar avancerad rutthantering, automatiserad testning och AI-assistenter med MCP-verktygsintegration.
+              En modern CRM-plattform med AI-agenter isolerade i Kubernetes. Hanterar databasändringar via naturligt språk med möjlighet att ångra ändringar, samt ett telefoniflöde (46elks + rösttolkning) som omvandlar röstsamtal till CRM-åtgärder med SMS-bekräftelse.
             </p>
             <div class="project-links">
               <a href="https://slaycrm.eu" target="_blank" rel="noopener" class="link-btn link-demo">Besök<br />SlayCRM&nbsp;&rarr;</a>
@@ -216,12 +226,12 @@
             <div class="project-tags">
               <span class="badge">Astro</span>
               <span class="badge">TypeScript</span>
-              <span class="badge">AI-workshops</span>
-              <span class="badge">Community</span>
+              <span class="badge">Kubernetes</span>
+              <span class="badge">Agent-prompting</span>
             </div>
             <h3 class="project-title">Airene Vibe Coding - Vibe Coding för barn</h3>
             <p class="project-description">
-              Ett workshopinitiativ och plattform för barn (5–12 år) att bygga spel, animationer och berättelser med mobil, surfplatta eller dator med AI-stöd - gratis, integritetsvänligt och utan kontokrav.
+              Ett workshopinitiativ och en interaktiv plattform för barn att bygga spel och animationer med AI-stöd. Optimerade agentens systemprompter och språkbruk, återställde MCP-verktyg och isolerade agentmiljön med Kubernetes.
             </p>
             <div class="project-links">
               <a href="https://vibecoding.bernting.se" target="_blank" rel="noopener" class="link-btn link-demo">Besök<br />plattformen&nbsp;&rarr;</a>
@@ -246,7 +256,7 @@
             </div>
             <h3 class="project-title">My Kitchen - Nativ iOS-app</h3>
             <p class="project-description">
-              En nativ iPhone-app för matlager och minskat matsvinn, byggd i SwiftUI för eget dagligt bruk. Innehåller proaktiva bäst-före-varningar, anpassningsbara varningsintervall, snabb sökning och lokal atomär JSON-lagring utan molnberoenden.
+              En nativ iPhone-app för matlager och minskat matsvinn, byggd i SwiftUI för eget dagligt bruk. Innehåller bäst-före-varningar, anpassningsbara varningsintervaller, snabb sökning och lokal atomär JSON-lagring utan molnberoenden.
             </p>
             <div class="project-links">
               <a href="https://github.com/Natooorr/KitchenInventory" target="_blank" rel="noopener" class="link-btn link-demo">Visa på<br />GitHub&nbsp;&rarr;</a>
@@ -274,13 +284,13 @@
           </div>
           <ul class="interest-list">
             <li>
-              <strong>Enkelt &amp; gott:</strong> <em>Kolakakor</em> (sega kolasnittar)&nbsp;- snabba, klassiska och helt oslagbara till kaffet.
+              <strong>Enkelt &amp; gott:</strong> <em>Kolakakor</em> (sega kolasnittar)&nbsp;- enkla att baka, klassiska, nostalgiska och helt oslagbara till fikat.
             </li>
             <li>
               <strong>Bjudfavorit:</strong> <em>Cheesecake</em>&nbsp;- krämig, fyllig, bakad med krispig botten och alltid den första efterrätten som tar slut.
             </li>
             <li>
-              <strong>Favorit:</strong> <em>Crème brûlée</em>&nbsp;- kräver lite mer teknik och brännare, men är en absolut favorit.
+              <strong>Favorit:</strong> <em>Crème brûlée</em>&nbsp;- kräver noggrann teknik, tålamod och brännare, men resultatet är värt varje minut.
             </li>
           </ul>
         </div>
@@ -292,13 +302,13 @@
           </div>
           <ul class="interest-list">
             <li>
-              <strong>Enkla att lära:</strong> <em>Codenames</em> &amp; <em>Coup</em>&nbsp;- snabba att lära ut, fulla av bluff och alltid roliga i gott sällskap.
+              <strong>Enkla att lära:</strong> <em>Codenames</em> &amp; <em>Coup</em>&nbsp;- snabba att lära ut, fulla av bluff och alltid fantastiskt roliga i gott sällskap.
             </li>
             <li>
-              <strong>Återvänder alltid till:</strong> <em>Dominion</em>&nbsp;- det tidlösa kortbygget som jag aldrig tröttnar på att plocka fram.
+              <strong>Återvänder alltid till:</strong> <em>Dominion</em>&nbsp;- det tidlösa kortbygget som jag ständigt vill plocka fram till spelbordet.
             </li>
             <li>
-              <strong>Favoriten:</strong> <em>Terraforming Mars</em>&nbsp;- min absoluta favorit när det gäller djup strategi och engine-building.
+              <strong>Favoriten:</strong> <em>Terraforming Mars</em>&nbsp;- min absoluta favorit när det gäller djup strategi, optimering och motorbygge.
             </li>
           </ul>
         </div>
@@ -313,10 +323,10 @@
               <strong>Solo:</strong> <em>Slay the Spire (2)</em>&nbsp;- fantastisk roguelike-kortbyggare och mitt självklara val när jag vill spela på egen hand.
             </li>
             <li>
-              <strong>Med vänner:</strong> <em>Terraria</em> och <em>League of Legends</em>&nbsp;- spel som helt klart är som allra roligast tillsammans med andra.
+              <strong>Med vänner:</strong> <em>Terraria</em> och <em>League of Legends</em>&nbsp;- spel som helt klart är som allra roligast tillsammans med goda vänner.
             </li>
             <li>
-              <strong>Udda favorit:</strong> <em>Mewgenics</em>&nbsp;- ett kaotiskt, taktiskt och underbart knäppt katt-roguelike.
+              <strong>Udda favorit:</strong> <em>Mewgenics</em>&nbsp;- ett kaotiskt, underbart knäppt katt-roguelike fyllt med djup taktik och galenskap.
             </li>
           </ul>
         </div>
@@ -329,7 +339,7 @@
     <div class="container contact-container">
       <h2 class="section-title">Hör av dig</h2>
       <p class="contact-subtitle">
-        Jag avslutar mitt uppdrag hos KenDev AB i december och ser fram emot nästa utmaning inom mjukvaruutveckling. Hör gärna av dig eller anslut på LinkedIn!
+        Jag avslutar mitt uppdrag hos KenDev AB i december och ser mycket fram emot nästa spännande utmaning inom mjukvaruutveckling. Hör gärna av dig eller anslut på LinkedIn!
       </p>
       <div class="contact-buttons">
         <a href="https://www.linkedin.com/in/zachris-stenhammar-56bb15175/" target="_blank" rel="noopener" class="btn btn-primary btn-large">
