@@ -970,7 +970,8 @@ body {
 
 .timeline-meta {
   display: flex;
-  gap: 1rem;
+  flex-wrap: wrap;
+  gap: 0.4rem 1rem;
   align-items: center;
   margin-bottom: 0.35rem;
 }
@@ -1135,7 +1136,7 @@ body {
     min-height: 1250px;
   }
   #experience {
-    min-height: 1220px;
+    min-height: 1280px;
   }
   #projects {
     min-height: 2360px;
@@ -1153,7 +1154,7 @@ body {
     min-height: 550px;
   }
   .timeline-item:last-child {
-    min-height: 270px;
+    min-height: 330px;
   }
   .project-card {
     min-height: 660px;
