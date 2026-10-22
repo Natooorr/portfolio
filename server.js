@@ -23,6 +23,8 @@ const server = http.createServer((req, res) => {
     reqPath = '/index.html';
   } else if (reqPath === '/sv' || reqPath === '/sv/') {
     reqPath = '/sv.html';
+  } else if (reqPath === '/favicon.ico') {
+    reqPath = '/favicon.png';
   }
 
   let filePath = path.join(PUBLIC_DIR, reqPath);
